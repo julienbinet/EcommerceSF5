@@ -1,0 +1,41 @@
+
+nelmio alice pour fixtures
+
+---
+
+id templace mailjet : 2587368
+
+---
+
+mettre https en local
+symfony server:ca:install
+
+---
+
+Réinitialisation mot de passe composer require symfonycasts/reset-password-bundle
+
+ created: src/Controller/ResetPasswordController.php
+ created: src/Entity/ResetPasswordRequest.php
+ created: src/Repository/ResetPasswordRequestRepository.php
+ updated: config/packages/reset_password.yaml
+ created: src/Form/ResetPasswordRequestFormType.php
+ created: src/Form/ChangePasswordFormType.php
+ created: templates/reset_password/check_email.html.twig
+ created: templates/reset_password/email.html.twig
+ created: templates/reset_password/request.html.twig
+ created: templates/reset_password/reset.html.twig
+
+
+ Next:
+   1) Run "php bin/console make:migration" to generate a migration for the new "App\Entity\ResetPasswordRequest" entity.
+   2) Review forms in "src/Form" to customize validation and labels.
+   3) Review and customize the templates in `templates/reset_password`.
+   4) Make sure your MAILER_DSN env var has the correct settings.
+   5) Create a "forgot your password link" to the app_forgot_password_request route on your login form.
+
+ Then open your browser, go to "/reset-password" and enjoy!
+
+modifier fichier pour local 
+vendor/symfony/mailjet-mailer/Transport/MailjetSmtpTransport.php
+
+Voir pour bien configurer MAILER_DSN dans le fichier .env

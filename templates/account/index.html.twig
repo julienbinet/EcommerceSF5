@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - {{ parent() }}!{% endblock %}
+
+{% block content %}
+
+    <h1>Mon compte</h1>
+
+    <p>
+        Bienvenue {{ app.user.firstname | capitalize }} !
+    </p>
+
+    <ul>
+        {% if is_granted('ROLE_ADMIN') %}
+            <li><a href="{{ path('admin') }}">Accès Adminisatration du site</a></li>
+        {% endif %}
+        <li><a href="{{ path('account_password') }}">Modifier mon mot de passe</a></li>
+        <li><a href="{{ path('account_address') }}">Mes adresses</a></li>
+        <li><a href="{{ path('account_order') }}">Mes commandes</a></li>
+    </ul>
+
+{% endblock %}
