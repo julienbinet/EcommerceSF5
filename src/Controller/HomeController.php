@@ -31,6 +31,11 @@ class HomeController extends AbstractController
     public function index(): Response
     {
 
+echo '<pre style="margin-top: 150px;">';
+var_dump($_ENV["MAIL_API_KEY"]);
+var_dump($_ENV["MAIL_API_KEY_SECRET"]);
+echo '</pre>';
+
 
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
         $headers = $this->entityManager->getRepository(Header::class)->findAll();
