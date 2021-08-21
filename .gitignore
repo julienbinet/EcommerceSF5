@@ -8,6 +8,8 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+/.env
+/__notes.txt
 
 ###> symfony/phpunit-bridge ###
 .phpunit
